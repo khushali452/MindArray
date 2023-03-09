@@ -44,5 +44,9 @@ public class String_opn {
         //static method : valueOF ...all above methods were instance methods
         System.out.println(String.valueOf(4.5));
 
+        String name = "pruthviraj";
+
+        System.out.println(name.substring(2,4));
+
     }
 }

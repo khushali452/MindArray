@@ -4,14 +4,14 @@ class bank {
     int getRateOfInterest(){return 0;}
 }
 //Creating child classes.
-class sbi extends bank {
+class sbi extends bank1 {
     int getRateOfInterest(){return 8;}
 }
 
-class ICICI extends bank {
+class ICICI extends bank1 {
     int getRateOfInterest(){return 7;}
 }
-class AXIS extends bank {
+class AXIS extends bank1 {
     int getRateOfInterest(){return 9;}
 }
 //Test class to create objects and call the methods

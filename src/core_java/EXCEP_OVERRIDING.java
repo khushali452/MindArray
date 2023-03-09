@@ -8,6 +8,7 @@ class parent1{
     }
 }
 
+
 class child1 extends parent1{
     //void msg() throws Exception{}
     //this gives error as we cannot throw parent class exception of superclass in subclass
