@@ -44,6 +44,7 @@ public class Linkedlist {
             System.out.println(i.next());
         }
 
+
         System.out.println("hi");
         llist.removeFirst();
         llist.remove(0);
