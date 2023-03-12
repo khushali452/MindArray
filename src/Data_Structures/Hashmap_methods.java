@@ -41,8 +41,16 @@ public class Hashmap_methods {
         System.out.println(map.hashCode());
         System.out.println(map.replace("A",20));
 
-        map.merge("B",)
+        map1.put("A",45);
 
+        map.forEach((k,v)->map1.merge(
+                k,
+                v,
+                (v1,v2)
+                ->v1.equals(v2)? v1
+                        : v1 + 10
+        ));
+        System.out.println(map1);
 
 
 
