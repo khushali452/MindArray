@@ -1,4 +1,4 @@
-package Data_Structures;
+package Data_Structures.Lists;
 
 import java.util.*;
 

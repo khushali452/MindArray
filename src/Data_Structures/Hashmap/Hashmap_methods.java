@@ -1,4 +1,4 @@
-package Data_Structures;
+package Data_Structures.Hashmap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,6 +51,8 @@ public class Hashmap_methods {
                         : v1 + 10
         ));
         System.out.println(map1);
+
+        System.out.println(map.getOrDefault("B",0));
 
 
 

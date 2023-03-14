@@ -1,4 +1,4 @@
-package Data_Structures;
+package Data_Structures.Hashmap;
 import java.util.*;
 
 public class Hashmap_entrymethods {
