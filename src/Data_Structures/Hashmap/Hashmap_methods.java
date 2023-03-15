@@ -28,12 +28,14 @@ public class Hashmap_methods {
         System.out.println(map);
 
         //computeifpresent
-        map.computeIfPresent("J",(k,v) -> v+1);
+        //returns null if key not present
+        System.out.println(map.computeIfPresent("Q",(k,v) -> v+1));
         System.out.println(map);
 
         map.computeIfAbsent("K",k -> 6+3);
         System.out.println(map);
 
+        //returns RTE exception if key not present
         map.compute("K",(k,v)-> v+1);
 
         System.out.println(map.containsKey("A"));

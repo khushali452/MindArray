@@ -7,6 +7,10 @@ public class Treeset_method {
     public static void main(String[] args) {
         TreeSet set = new TreeSet<>();
 
+        //here if we add any value after null, treeset will compare that value to null as it sorts in tree structure
+        //and as null cannot be compared to any value it wil give null pointer exception
+        //set.add(null);
+
         set.add(1);
         set.add(24);
         set.add(66);
