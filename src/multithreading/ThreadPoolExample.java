@@ -1,12 +1,11 @@
 package multithreading;
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class ThreadPoolExample {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+
+        CountDownLatch count = new CountDownLatch(3);
 
         System.out.println("Inside : "+Thread.currentThread().getName());
 
@@ -22,6 +21,7 @@ public class ThreadPoolExample {
             }catch(InterruptedException ie){
                 throw new IllegalStateException(ie);
             }
+            count.countDown();
         };
 
         Runnable task2 = () ->{
@@ -32,6 +32,7 @@ public class ThreadPoolExample {
             }catch(InterruptedException ie){
                 throw new IllegalStateException(ie);
             }
+            count.countDown();
         };
 
         Runnable task3 = () ->{
@@ -42,6 +43,7 @@ public class ThreadPoolExample {
             }catch(InterruptedException ie){
                 throw new IllegalStateException(ie);
             }
+            count.countDown();
         };
 
         //When a new task is submitted, the executor service picks one of the available threads from the pool and executes the task on that thread.
@@ -54,6 +56,9 @@ public class ThreadPoolExample {
         executorService.submit(task2);
         executorService.submit(task3);
 
+        count.await();
+
         executorService.shutdown();
+        System.out.println("Endededd");
     }
 }

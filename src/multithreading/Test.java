@@ -1,43 +1,19 @@
 package multithreading;
-class newthread extends Thread
-{
-    Thread t;
-    String name;
-    newthread(String threadname)
-    {
-        name = threadname;
-        t = new Thread(this,name);
-        t.start();
-    }
-    public void run()
-    {
-        try {
-//            Thread.sleep(3000);
-            wait();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("running");
+
+public class Test extends Thread{
+
+    public synchronized void start(){
+        System.out.println("stat");
     }
 
-}
-class multithreaded_programing
-{
-    public static void main(String args[])
-    {
-        newthread obj1 = 	 new newthread("one");
-        //newthread obj2 =	 new newthread("two");
+    @Override
+    public void run() {
+        System.out.println("run");
+    }
 
-        System.out.print(obj1.t.isAlive());
+    public static void main(String[] args) {
+        Test th = new Test();
+        th.start();
 
-        try
-        {
-            //obj1.t.wait();
-            System.out.print(obj1.t.isAlive());
-        }
-        catch(Exception e)
-        {
-            System.out.print(e);
-        }
     }
 }
